@@ -1,0 +1,40 @@
+---
+- name: "Get current computer names in macOS"
+  become: true
+  shell: "scutil --get {{ item }}"
+  register: macos_computername_current_names
+  changed_when: false
+  ignore_errors: true
+  failed_when: false
+  with_items:
+    - "ComputerName"
+    - "LocalHostName"
+    - "HostName"
+
+- name: "Setup the computer names in macOS if applicable"
+  become: true
+  shell: "scutil --set {{ item.item }} {{ macos_computername[item.item] }}"
+  with_items: "{{ macos_computername_current_names.results }}"
+  when: macos_computername[item.item] is defined and item.stdout != macos_computername[item.item]
+
+- name: "Get the network NetBIOS name"
+  become: true
+  shell: "defaults read /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName"
+  register: macos_computername_current_netbios
+  changed_when: false
+
+- name: "Setup the network NetBIOS name"
+  become: true
+  osx_defaults:
+    domain: "/Library/Preferences/SystemConfiguration/com.apple.smb.server"
+    key: "NetBIOSName"
+    type: "string"
+    value: "{{ macos_computername.NetBIOSName | upper }}"
+    state: present
+  when: macos_computername.NetBIOSName is defined and ( macos_computername.NetBIOSName | upper ) != macos_computername_current_netbios.stdout | upper
+
+# - debug:
+#    var: macos_computername_current_netbios
+
+# - debug:
+#    var: macos_computername.NetBIOSName%  
