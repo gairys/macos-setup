@@ -1,0 +1,11 @@
+- name: set hostname
+  include: hostname.yml
+
+- name: application installs
+  include: apps.yml 
+
+#- name: configuration
+#  include: configuration.yml
+
+#- name: dotfiles
+#  include: dotfiles.yml
