@@ -1,6 +1,7 @@
 ---
-# setup my macbook just the way I like it
+# Finally, one playbook for my macs
 
 - hosts: mac 
   roles:
-    - setup
+    - hostname
+    - homebrew

@@ -1,28 +1,22 @@
----
-# Set the hostname
-macos_computername:  
-  # User-friendly name
-  ComputerName: "newmacbook"
-  # hostname
-  HostName: "newmacbook"
-  # hostname for Bonjour
-  LocalHostName: "newmacbook"
-  # hostname for Netbios
-  NetBIOSName: "newmacbook"
+homebrew_taps: []
 
-# list of applications to install
-general:
-  local_home: "{{ lookup('env','HOME') }}"
+homebrew_package_removals: []
 
-# homebrew applications
-applications:
+homebrew_packages:
   - awscli
   - bash-completion
+  - cowsay
+  - ffmpeg
   - git
   - git-lfs
   - mackup
   - neofetch
   - nmap
+  - openssl
+  - pyenv
+  - python
+  - rsync
+  - s3cmd
   - ssh-copy-id
   - terraform
   - terraform-inventory
@@ -30,12 +24,14 @@ applications:
   - tree
   - vault
   - wget
+  - youtube-dl
+  - zsh-completions
   - zsh-syntax-highlighting
 
-# homebrew cask applications
-cask_applications:
+homebrew_cask_packages:
   - brave-browser
   - caffeine
+  - disk-inventory-x
   - docker
   - emacs
   - firefox
@@ -54,3 +50,13 @@ cask_applications:
   - vlc
   - vmware-fusion
   - vscodium
+  - wireshark
+
+pyenv_python_versions:
+  # In precedence order
+  - 3.7.4
+  - 3.6.9
+  - 3.5.7
+  - 2.7.16
+  - pypy3.6-7.1.1
+  - pypy2.7-7.1.1

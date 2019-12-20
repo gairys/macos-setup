@@ -1,0 +1,20 @@
+---
+# Uninstall and install brew and cask packages, then cleanup
+
+- name: Uninstall old homebrew packages
+  homebrew:
+    name: '{{ homebrew_package_removals }}'
+    state: absent
+
+- name: start installing homebrew packages
+  homebrew:
+    name: "{{ homebrew_packages }}"
+    state: latest
+
+- name: start installing homebrew cask packages
+  homebrew_cask:
+    name: "{{ homebrew_cask_packages }}"
+    state: installed
+
+- name: homebrew cleanup
+  command: brew cleanup

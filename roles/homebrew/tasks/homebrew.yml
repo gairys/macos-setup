@@ -1,0 +1,13 @@
+---
+# update homebrew and add any new taps
+
+- name: ensure homebrew is updated 
+  homebrew:
+    state: latest
+    update_homebrew: yes
+
+- name: homebrew taps
+  command: brew tap {{ item }}
+  loop: '{{ homebrew_taps }}'
+  tags:
+  - brew
