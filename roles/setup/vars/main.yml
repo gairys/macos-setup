@@ -1,12 +1,6 @@
 ---
-# list of applications to install
-general:
-  local_home: "{{ lookup('env','HOME') }}"
-
-macos_computername:
-  # Single name for all; friendly, hostname, Bonjour, NetBIOS
-  SingleName: "newmacbook"
-  
+# Set the hostname
+macos_computername:  
   # User-friendly name
   ComputerName: "newmacbook"
   # hostname
@@ -15,6 +9,10 @@ macos_computername:
   LocalHostName: "newmacbook"
   # hostname for Netbios
   NetBIOSName: "newmacbook"
+
+# list of applications to install
+general:
+  local_home: "{{ lookup('env','HOME') }}"
 
 # homebrew applications
 applications:
