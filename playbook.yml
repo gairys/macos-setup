@@ -1,7 +1,7 @@
 ---
 # Finally, one playbook for my macs
 
-- hosts: mac 
+- hosts: mac
   roles:
     - hostname
     - homebrew

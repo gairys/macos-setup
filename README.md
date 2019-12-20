@@ -4,6 +4,12 @@ Setting up my new macbooks with ansible and homebrew.
 
 I enjoy playing with Ansible and decided to apply what I've learned to setting up my Mac products somewhat consistently. I had a fairly linear layout for my last setup, but decided to go with a more traditional Ansible playbook layout.
 
+After downloading, to run the script use
+
+```zsh
+ansible-playbook -i ./hosts playbook.yml --verbose -K
+```
+
 ### Giving thanks first
 
 First, I'd like to thank the many people from GitHub who I referenced while setting up this repo for myself.

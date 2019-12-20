@@ -1,10 +1,10 @@
 homebrew_taps: []
 
-homebrew_package_removals: []
+homebrew_package_removals:
+  - bash-completion
 
 homebrew_packages:
   - awscli
-  - bash-completion
   - cowsay
   - ffmpeg
   - git
