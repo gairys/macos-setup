@@ -44,3 +44,21 @@ https://translate.google.com/translate?hl=en&sl=ja&u=https://dev.classmethod.jp/
 
 https://dev.classmethod.jp/etc/mrmo-first-mac-setup-ansible/
 
+The old playbook for calling homebrew was set up like this, which is what was giving the warning:
+
+```bash
+- name: Install Homebrew Packages
+  homebrew:
+    name: "{{ item }}"
+    state: "present"
+  with_items: "{{ brew_packages }}"
+```
+
+The fix is simple. Change those lines to look more like this:
+
+```bash
+- name: Install Homebrew Packages
+  homebrew:
+    name: "{{ brew_packages }}"
+    state: "present"
+```
