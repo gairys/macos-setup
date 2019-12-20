@@ -1,0 +1,58 @@
+---
+# list of applications to install
+general:
+  local_home: "{{ lookup('env','HOME') }}"
+
+macos_computername:
+  # Single name for all; friendly, hostname, Bonjour, NetBIOS
+  SingleName: "newmacbook"
+  
+  # User-friendly name
+  ComputerName: "newmacbook"
+  # hostname
+  HostName: "newmacbook"
+  # hostname for Bonjour
+  LocalHostName: "newmacbook"
+  # hostname for Netbios
+  NetBIOSName: "newmacbook"
+
+# homebrew applications
+applications:
+  - awscli
+  - bash-completion
+  - git
+  - git-lfs
+  - mackup
+  - neofetch
+  - nmap
+  - ssh-copy-id
+  - terraform
+  - terraform-inventory
+  - terraform-provisioner-ansible
+  - tree
+  - vault
+  - wget
+  - zsh-syntax-highlighting
+
+# homebrew cask applications
+cask_applications:
+  - brave-browser
+  - caffeine
+  - docker
+  - emacs
+  - firefox
+  - iterm2
+  - launchbar
+  - macvim
+  - nvalt
+  - powershell
+  - royal-tsx
+  - slack
+  - sourcetree
+  - spotify
+  - sublime-text
+  - the-unarchiver
+  - vagrant
+  - vlc
+  - vmware-fusion
+  - vscodium
