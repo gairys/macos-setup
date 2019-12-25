@@ -2,13 +2,13 @@
 # Set the hostname
 macos_computername:  
   # User-friendly name
-  ComputerName: "New MacBook Pro"
+  ComputerName: "gm13"
   
   # hostname
-  HostName: "newmbp"
+  HostName: "gm13"
 
   # hostname for Bonjour
-  LocalHostName: "newmbp"
+  LocalHostName: "gm13"
   
   # hostname for Netbios
-  NetBIOSName: "newmbp"
+  NetBIOSName: "gm13"
