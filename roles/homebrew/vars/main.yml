@@ -4,6 +4,7 @@ homebrew_package_removals:
   - bash-completion
 
 homebrew_packages:
+  - ack
   - awscli
   - cowsay
   - ffmpeg
